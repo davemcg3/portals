@@ -1,0 +1,29 @@
+<%= form_with(model: rotation) do |form| %>
+  <% if rotation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rotation.errors.count, "error") %> prohibited this rotation from being saved:</h2>
+
+      <ul>
+        <% rotation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.label current_user %>
+  </div>
+
+  <%# Portalable is looking for an id of a portal. If I choose a crypto portal id I only get the data from that one row, but I want multiple. The structure on the crypto portal data is wrong. Rethink. %>
+  <div>
+    <%= form.label :portalable_id, style: "display: block" %>
+    <%= form.select :portalable_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

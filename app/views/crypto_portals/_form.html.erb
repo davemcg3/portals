@@ -1,0 +1,32 @@
+<%= form_with(model: crypto_portal) do |form| %>
+  <% if crypto_portal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(crypto_portal.errors.count, "error") %> prohibited this crypto_portal from being saved:</h2>
+
+      <ul>
+        <% crypto_portal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :currency, style: "display: block" %>
+    <%= form.text_field :currency %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

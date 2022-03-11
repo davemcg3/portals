@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portals</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <%= user_register_link %>
+    <%= user_session_link %>
+    <% if current_user.present? %>
+      <%= link_to 'New Portal', new_rotation_path %>
+    <% end %>
+    <p class="notice"><%= notice&.html_safe %></p>
+    <p class="alert"><%= alert&.html_safe %></p>
+
+    <%= yield %>
+  </body>
+</html>
+

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @crypto_portal %>
+
+<div>
+  <%= link_to "Edit this crypto portal", edit_crypto_portal_path(@crypto_portal) %> |
+  <%= link_to "Back to crypto portals", crypto_portals_path %>
+
+  <%= button_to "Destroy this crypto portal", @crypto_portal, method: :delete %>
+</div>
