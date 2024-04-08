@@ -12,4 +12,9 @@ module ApplicationHelper
     link_to :Register, :new_user_registration if current_user.nil?
   end
 
+  def current_user_display
+    return current_user.display_name || current_user.email if current_user.present?
+    "Guest"
+  end
+
 end

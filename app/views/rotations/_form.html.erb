@@ -12,15 +12,19 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
+    <%#= form.label :user_id, style: "display: block" %>
     <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.label current_user %>
+    <%= form.label :email, current_user_display %>
   </div>
 
   <%# Portalable is looking for an id of a portal. If I choose a crypto portal id I only get the data from that one row, but I want multiple. The structure on the crypto portal data is wrong. Rethink. %>
   <div>
-    <%= form.label :portalable_id, style: "display: block" %>
-    <%= form.select :portalable_id %>
+    <%#= if portable_id.present? %>
+      <%#= form.label :portalable_id, style: "display: block" %>
+      <%#= form.select :portalable_id, options_for_select(Portalable.all.map { |p| [p.name, p.id] }) %>
+      <%#= form.label :portalable_id, style: "display: block" %>
+      <%#= form.select :portalable_id %>
+    <%# end %>
   </div>
 
   <div>
