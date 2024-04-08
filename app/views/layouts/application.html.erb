@@ -10,10 +10,17 @@
   </head>
 
   <body>
+    <h1><%=
+      link_to 'Portals', root_path
+    %></h1>
+    <%= current_user_display %>
     <%= user_register_link %>
     <%= user_session_link %>
+    <%= link_to 'New Portal', new_rotation_path %>
+    <%= link_to 'New Task', new_task_path %>
     <% if current_user.present? %>
-      <%= link_to 'New Portal', new_rotation_path %>
+      <%= link_to 'My Portals', rotations_path %>
+      <%= link_to 'My Account', edit_user_registration_path %>
     <% end %>
     <p class="notice"><%= notice&.html_safe %></p>
     <p class="alert"><%= alert&.html_safe %></p>

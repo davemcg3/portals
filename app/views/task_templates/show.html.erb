@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @task_template %>
+
+<div>
+  <%= link_to "Edit this task template", edit_task_template_path(@task_template) %> |
+  <%= link_to "Back to task templates", task_templates_path %>
+
+  <%= button_to "Destroy this task template", @task_template, method: :delete %>
+</div>

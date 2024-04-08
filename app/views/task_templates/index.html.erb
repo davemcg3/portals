@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Task templates</h1>
+
+<div id="task_templates">
+  <% @task_templates.each do |task_template| %>
+    <%= render task_template %>
+    <p>
+      <%= link_to "Show this task template", task_template %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New task template", new_task_template_path %>

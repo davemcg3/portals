@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :tasks
+  resources :task_templates
+  resources :task_types
   resources :rotations
   resources :crypto_portals
   devise_for :users
